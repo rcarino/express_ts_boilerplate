@@ -2,7 +2,7 @@
   "name": "express_ts_test",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "dist/app.js",
   "scripts": {
     "clean": "rimraf dist/*",
     "copy-assets": "ts-node tools/copyAssets",
@@ -18,12 +18,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.3"
   },
   "devDependencies": {
-    "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.13",
     "@types/fs-extra": "^9.0.13",
     "@types/node": "^17.0.21",

@@ -1,10 +1,12 @@
 import dotenv from "dotenv";
 import express from "express";
 import path from "path";
+import {indexRouter} from "./routes";
+import {helloRouter} from "./routes/hello";
 
-// Used tutorial from Okta to setup a TS-express, static index.ts server
+// Used tutorial from Okta to setup a TS-express, static app.ts server
 // https://developer.okta.com/blog/2018/11/15/node-express-typescript#a-better-way-to-manage-configuration-settings-in-nodejs
-// Halted before auth and DB set up.
+// Halted before auth and DB set up. Kind of did my own thing for routing.
 
 // initialize configuration
 dotenv.config();
@@ -19,11 +21,8 @@ const app = express();
 app.set( "views", path.join( __dirname, "views" ) );
 app.set( "view engine", "ejs" );
 
-// define a route handler for the default home page
-app.get( "/", ( reqxs, res ) => {
-    // render the index template
-    res.render( "index" );
-} );
+app.use('/', indexRouter);
+app.use('/hello', helloRouter);
 
 // start the express server
 app.listen( port, () => {

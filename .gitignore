@@ -1,4 +1,5 @@
 node_modules/
+dist/
 
 # webstorm or any other idea project files
 .idea/
